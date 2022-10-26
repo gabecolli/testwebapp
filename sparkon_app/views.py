@@ -1,13 +1,26 @@
 from flask import Flask, render_template, url_for, request, redirect, flash, session
 from . import app
-import smtplib
+from flask_mail import Mail, Message
+
+
+
+
+app.config['MAIL_SERVER']='smtp.mail.yahoo.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'gabrielcolli.sr@yahoo.com'
+app.config['MAIL_PASSWORD'] = 'vzksfrmmeajybatk'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+mail = Mail(app)
+
+
+
 def send_email(name, email, message, subject):
-    yahoopass = "vzksfrmmeajybatk"
-    my_email = "gabrielcolli.sr@yahoo.com"
-    with smtplib.SMTP("smtp.mail.yahoo.com", port = 587) as connection:
-        connection.starttls()
-        connection.login(user = my_email, password = yahoopass)
-        connection.sendmail(from_addr = my_email, to_addrs = "python.sparkon@gmail.com", msg = f"Subject: {subject}\n\n{name}\n{email} has sent you a message:\n\n{message}")
+  msg = Message(f'you have a message from {email} with a subject of:{subject}', sender =   app.config['MAIL_USERNAME'], recipients = ['python.sparkon@gmail.com'])
+  msg.body = message
+  mail.send(msg)
+
 
 @app.route("/")
 def home():
