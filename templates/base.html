@@ -46,7 +46,7 @@
         <ul class="we-create animated fadeInUp delay-1s">
         	<li>We are a digital agency that loves helping businesses save time and leverage technology.</li>
         </ul>
-            <a class="link animated fadeInUp delay-1s servicelink" href="#service">Get Started</a>
+            <a class="link animated fadeInUp delay-1s servicelink" href="{{url_for('contact')}}">Get Started</a>
     </div>
 </header><!--header-end-->
 
@@ -55,7 +55,7 @@
         <ul class="main-nav">
         	<li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{url_for('services')}}">Services</a></li>
-            <li><a href="{{url_for('portfolio')}}">Portfolio</a></li>
+            <!-- <li><a href="{{url_for('portfolio')}}">Portfolio</a></li> -->
             <li class="small-logo"><a href="#header"><img src="{{url_for('static', filename='img/small-logo.png')}}" alt=""></a></li>
             <li><a href="{{url_for('contact')}}">Contact Us</a></li>
             <li><a href="{{url_for('aboutus')}}">About Us</a></li>
@@ -76,34 +76,31 @@
         	<div class="col-lg-6 col-sm-7 wow fadeInLeft">
             	<div class="contact-info-box address clearfix">
                 	<h3><i class=" icon-map-marker"></i>Address:</h3>
-                	<span>308 Negra Arroyo Lane<br>Albuquerque, New Mexico, 87111.</span>
+                	<span>Springtown<br>Texas.</span>
                 </div>
                 <div class="contact-info-box phone clearfix">
                 	<h3><i class="fa-phone"></i>Phone:</h3>
-                	<span>1-800-BOO-YAHH</span>
+                	<span>817-382-2590</span>
                 </div>
-                <div class="contact-info-box email clearfix">
-                	<h3><i class="fa-pencil"></i>email:</h3>
-                	<span>hello@knightstudios.com</span>
-                </div>
+                
             	<div class="contact-info-box hours clearfix">
                 	<h3><i class="fa-clock-o"></i>Hours:</h3>
                 	<span><strong>Monday - Thursday:</strong> 10am - 6pm<br><strong>Friday:</strong> People work on Fridays now?<br><strong>Saturday - Sunday:</strong> Best not to ask.</span>
                 </div>
-                <ul class="social-link">
+                <!-- <ul class="social-link">
                 	<li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
                     <li class="facebook"><a href="#"><i class="fa-facebook"></i></a></li>
                     <li class="pinterest"><a href="#"><i class="fa-pinterest"></i></a></li>
                     <li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li>
                     <li class="dribbble"><a href="#"><i class="fa-dribbble"></i></a></li>
-                </ul>
+                </ul> -->
             </div>
         	<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
             	<div class="form">
                 	
                     <div id="sendmessage">Your message has been sent. Thank you!</div>
                     <div id="errormessage"></div>
-                    <form action="" method="post" role="form" class="contactForm">
+                    <form action="{{url_for('send_message')}}" method="post" role="form" class="contactForm">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control input-text" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                             <div class="validation"></div>
@@ -130,8 +127,8 @@
 </div>
 <footer class="footer">
     <div class="container">
-        <div class="footer-logo"><a href="#"><img src="{{url_for('static', filename='img/footer-logo.png')}}" alt=""></a></div>
-        <span class="copyright">&copy; Knight Theme. All Rights Reserved</span>
+        <div class="footer-logo"><a href="#"><img src="{{url_for('static', filename='img/footer-logo (2).png')}}" alt=""></a></div>
+        <span class="copyright">&copy; Sparkon IT Consulting. All Rights Reserved</span>
         <div class="credits">
             <!-- 
                 All the links in the footer should remain intact. 
@@ -139,7 +136,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Knight
             -->
-            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            
         </div>
     </div>
 </footer>

@@ -234,7 +234,7 @@ color: #fff;
 	font-style:normal;
 	font-size:38px;
 	display:block;
-	color:#222;
+	color:rgb(15, 14, 14);
 	font-family: 'FontAwesome';
 	line-height:38px;
 }
@@ -496,11 +496,16 @@ border: 2px solid #fff;
 .team-leader-block{
 	max-width:993px;
 	margin:0 auto;
+	/* the first 3 lines below center the two images for this div */
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .team-leader-box{
 	width:30.66%;
 	margin-right: 3.82979%;
-	height: 490px;
+	height: 555px;
 	overflow: hidden;
 	text-align: center;
 	float: left;
@@ -535,6 +540,11 @@ border: 2px solid #fff;
 	width:100%;
 	height:100%;
 }
+
+.indent{
+	text-indent: 50px;
+}
+
 .team-leader:hover .team-leader-shadow{
 	box-shadow:inset  0px 0px 0px 148px rgba(17,17,17,0.80);
 }
@@ -869,3 +879,5 @@ border: 2px solid #fff;
 	animation-delay: 1.2s; 
 	-webkit-animation-delay: 1.2s; 
 }
+
+
