@@ -1,13 +1,16 @@
 from flask import Flask, render_template, url_for, request, redirect, flash, session
 from . import app
 import smtplib
+import os
 def send_email(name, email, message, subject):
-    yahoopass = "vzksfrmmeajybatk"
-    my_email = "gabrielcolli.sr@yahoo.com"
-    with smtplib.SMTP("smtp.mail.yahoo.com", port = 587) as connection:
+    yahoopass = os.environ.get('MAIL_PASSWORD')
+    my_email = os.environ.get('MAIL_USERNAME')
+    server = os.environ.get('MAIL_SERVER')
+    business_email = os.environ.get('BUSINESS_EMAIL')
+    with smtplib.SMTP(server, port = 587) as connection:
         connection.starttls()
         connection.login(user = my_email, password = yahoopass)
-        connection.sendmail(from_addr = my_email, to_addrs = "python.sparkon@gmail.com", msg = f"Subject: {subject}\n\n{name}\n{email} has sent you a message:\n\n{message}")
+        connection.sendmail(from_addr = my_email, to_addrs = business_email, msg = f"Subject: {subject}\n\n{name}\n{email} has sent you a message:\n\n{message}")
 
 @app.route("/")
 def home():
