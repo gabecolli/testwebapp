@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, flash, session
 from . import app
+
 import smtplib
 import os
 def send_email(name, email, message, subject):
@@ -11,6 +12,7 @@ def send_email(name, email, message, subject):
         connection.starttls()
         connection.login(user = my_email, password = yahoopass)
         connection.sendmail(from_addr = my_email, to_addrs = business_email, msg = f"Subject: {subject}\n\n{name}\n{email} has sent you a message:\n\n{message}")
+
 
 @app.route("/")
 def home():
